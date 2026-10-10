@@ -73,20 +73,23 @@ export function renderPartySection() {
           </div>
 
           <!-- Dresscode đồng bộ ở chân thẻ -->
-          <div class="pt-1 flex flex-wrap items-center justify-between gap-2 text-xs text-white/85">
-            <div class="flex items-center gap-2">
-              <span class="text-[11px] font-medium text-white/70">Dresscode:</span>
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[10px] font-semibold text-white">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#5F7A64] border border-white/30"></span> Xanh Sage
+          <div class="pt-1 flex items-center justify-between gap-2 text-xs text-white/85">
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-nowrap overflow-x-auto py-0.5 max-w-full [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
+              <span class="text-[10.5px] font-medium text-white/70 flex-shrink-0">Dresscode:</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[9.5px] sm:text-[10px] font-medium text-white flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#5F7A64] border border-white/30"></span> Xanh Sage
               </span>
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[10px] font-semibold text-white">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#E5D4B3] border border-white/30"></span> Vàng Kem
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[9.5px] sm:text-[10px] font-medium text-white flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#E5D4B3] border border-white/30"></span> Vàng Kem
               </span>
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[10px] font-semibold text-white">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#FFFFFF] border border-white/30"></span> Trắng
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[9.5px] sm:text-[10px] font-medium text-white flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#FFFFFF] border border-white/30"></span> Trắng
+              </span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-[9.5px] sm:text-[10px] font-medium text-white flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#F4B6C2] border border-white/30"></span> Hồng Phấn
               </span>
             </div>
-            <span class="text-[10px] text-white/60 italic hidden sm:inline">🌿 Có bãi đỗ xe ô tô & xe máy rộng rãi</span>
+            <span class="text-[10px] text-white/60 italic hidden lg:inline flex-shrink-0">🌿 Có bãi đỗ xe ô tô & xe máy</span>
           </div>
 
         </div>

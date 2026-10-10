@@ -18,7 +18,7 @@ export const PARTY_DATE = new Date("2026-10-31T17:30:00").getTime();
 
 export const BABY_CONFIG = {
   fullName: "Huỳnh Lê Khả Hân",
-  nickName: "Bé Bắp",
+  nickName: "Bé Tị",
   partyDateString: "Thứ Bảy, ngày 31 tháng 10 năm 2026",
   partyTimeString: "17:30 - 21:00",
   locationName: "Sunny Farm Coffee and BBQ",
