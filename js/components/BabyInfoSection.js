@@ -46,7 +46,7 @@ export function renderBabyInfoSection() {
           <div class="p-5 rounded-apple-card bg-white apple-border shadow-apple-soft flex flex-col justify-between">
             <span class="text-xs text-apple-secondary">Số răng</span>
             <div class="my-2">
-              <span class="text-3xl font-bold text-apple-text tracking-tight">6</span>
+              <span class="text-3xl font-bold text-apple-text tracking-tight">8</span>
               <span class="text-xs text-apple-secondary">chiếc</span>
             </div>
             <span class="text-[11px] text-apple-sage font-medium">Cười khoe răng thỏ</span>
