@@ -9,8 +9,11 @@ import { renderRSVPSection } from './components/RSVPSection.js';
 import { renderFooterSection } from './components/FooterSection.js';
 import { renderModals, setupModalHandlers } from './components/Modals.js';
 
-// 1. Quản lý Âm Nhạc (D:\thoi-noi-be\public\music.mp3)
+// ==========================================
+// 1. TỰ ĐỘNG PHÁT NHẠC THÔNG MINH (AUTOPLAY DUAL-MODE)
+// ==========================================
 let isPlaying = false;
+
 window.toggleMusic = function() {
   const audio = document.getElementById("bgMusic");
   const icon = document.getElementById("musicIconWrapper");
@@ -19,31 +22,82 @@ window.toggleMusic = function() {
   if (!isPlaying) {
     audio.play().then(() => {
       isPlaying = true;
-      icon.classList.add("animate-spin-music");
-      text.innerText = "Tắt Nhạc";
-    }).catch(err => console.log("Trình duyệt yêu cầu tương tác:", err));
+      icon?.classList.add("animate-spin-music");
+      if (text) text.innerText = "Tắt Nhạc";
+    }).catch(err => console.log("Trình duyệt chặn autoplay:", err));
   } else {
     audio.pause();
     isPlaying = false;
-    icon.classList.remove("animate-spin-music");
-    text.innerText = "Phát Nhạc";
+    icon?.classList.remove("animate-spin-music");
+    if (text) text.innerText = "Phát Nhạc";
   }
 };
 
-// Tự động phát khi người dùng chạm lần đầu vào màn hình (theo tiêu chuẩn iOS / Safari)
-function initAutoPlayOnInteraction() {
-  const handleFirstTouch = () => {
-    if (!isPlaying) {
-      window.toggleMusic();
+function setupAutoPlay() {
+  const audio = document.getElementById("bgMusic");
+  const icon = document.getElementById("musicIconWrapper");
+  const text = document.getElementById("musicStatusText");
+
+  const startMusic = () => {
+    if (!isPlaying && audio) {
+      audio.play().then(() => {
+        isPlaying = true;
+        icon?.classList.add("animate-spin-music");
+        if (text) text.innerText = "Tắt Nhạc";
+        // Khi nhạc đã phát thành công, gỡ các lắng nghe sự kiện
+        ['touchstart', 'click', 'scroll', 'touchend'].forEach(evt => {
+          document.removeEventListener(evt, startMusic);
+        });
+      }).catch(() => {
+        // Trình duyệt chưa cho phép, tiếp tục chờ tương tác đầu tiên
+      });
     }
-    document.removeEventListener("click", handleFirstTouch);
-    document.removeEventListener("scroll", handleFirstTouch);
   };
-  document.addEventListener("click", handleFirstTouch, { once: true });
-  document.addEventListener("scroll", handleFirstTouch, { once: true });
+
+  // Thử phát ngay lập tức khi load trang
+  startMusic();
+
+  // Cơ chế dự phòng: Kích hoạt ngay khi người dùng chạm hoặc lướt màn hình lần đầu
+  ['touchstart', 'click', 'scroll', 'touchend'].forEach(evt => {
+    document.addEventListener(evt, startMusic, { passive: true, once: false });
+  });
 }
 
-// 2. Countdown Timer
+// ==========================================
+// 2. ĐIỀU KHIỂN MENU MOBILE
+// ==========================================
+let isMobileMenuOpen = false;
+
+window.toggleMobileMenu = function() {
+  const drawer = document.getElementById("mobileMenuDrawer");
+  const icon = document.getElementById("menuIcon");
+  isMobileMenuOpen = !isMobileMenuOpen;
+
+  if (isMobileMenuOpen) {
+    drawer.classList.remove("opacity-0", "-translate-y-6", "pointer-events-none");
+    drawer.classList.add("opacity-100", "translate-y-0", "pointer-events-auto");
+    icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M6 18L18 6M6 6l12 12"/>`;
+  } else {
+    window.closeMobileMenu();
+  }
+};
+
+window.closeMobileMenu = function() {
+  const drawer = document.getElementById("mobileMenuDrawer");
+  const icon = document.getElementById("menuIcon");
+  isMobileMenuOpen = false;
+  if (drawer) {
+    drawer.classList.add("opacity-0", "-translate-y-6", "pointer-events-none");
+    drawer.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
+  }
+  if (icon) {
+    icon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 6h16M4 12h16m-7 6h7"/>`;
+  }
+};
+
+// ==========================================
+// 3. ĐỒNG HỒ ĐẾM NGƯỢC
+// ==========================================
 function initCountdown() {
   function update() {
     const diff = PARTY_DATE - new Date().getTime();
@@ -68,11 +122,13 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
-// 3. Sổ lưu bút (Local Storage)
+// ==========================================
+// 4. SỔ LƯU BÚT LỜI CHÚC
+// ==========================================
 function initWishSystem() {
   const DEFAULT_WISHES = [
-    { name: "Ông Bà Ngoại", message: "Chúc bé cưng của ông bà mau ăn chóng lớn, luôn tươi cười và bình an!", time: "Hôm nay" },
-    { name: "Cô Phương Thảo", message: "Mừng thôi nôi thiên thần nhỏ! Chúc con cả đời rực rỡ và hạnh phúc.", time: "Hôm qua" }
+    { name: "Ông Bà Ngoại", message: "Chúc bé Khả Hân mau ăn chóng lớn, luôn tươi cười rạng rỡ và bình an!", time: "Hôm nay" },
+    { name: "Cô Phương Thảo", message: "Mừng thôi nôi công chúa nhỏ! Chúc con cả đời ngập tràn niềm vui và hạnh phúc.", time: "Hôm qua" }
   ];
 
   function getWishes() {
@@ -126,7 +182,9 @@ function initWishSystem() {
   }
 }
 
-// 4. Hiệu ứng Cuộn: Chữ từ từ xuất hiện, Ảnh từ mờ (blur) chuyển sang rõ nét
+// ==========================================
+// 5. HIỆU ỨNG CUỘN TRANG
+// ==========================================
 function initScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -162,5 +220,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initCountdown();
   initWishSystem();
   initScrollReveal();
-  initAutoPlayOnInteraction();
+  setupAutoPlay();
 });
