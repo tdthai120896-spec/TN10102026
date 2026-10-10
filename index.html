@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Mừng Thôi Nôi Bé Yêu • 1st Birthday Celebration</title>
+  <title>Mừng Thôi Nôi Bé Huỳnh Lê Khả Hân • 1st Birthday</title>
 
-  <!-- Google Fonts HỖ TRỢ 100% TIẾNG VIỆT CÓ DẤU (Khắc phục triệt để lỗi vỡ font) -->
+  <!-- Google Fonts Chuẩn Tiếng Việt không lỗi dấu -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
@@ -18,14 +18,13 @@
         extend: {
           colors: {
             theme: {
-              sage: '#5F7A64',
-              'sage-light': '#E6EFE7',
-              'sage-soft': '#F1F6F2',
+              sage: '#4E7259',
+              'sage-light': '#E2EDE5',
               gold: '#B8923F',
-              'gold-light': '#FCF8EE',
+              'gold-light': '#FAF5E8',
               'gold-border': '#E4D5B2',
-              text: '#1F2E23',
-              secondary: '#5C6B60',
+              text: '#1C2E22',
+              secondary: '#55695C',
             }
           },
           fontFamily: {
@@ -45,22 +44,22 @@
   <style>
     body {
       font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #1F2E23;
+      color: #1C2E22;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      background-color: #F6F8F5;
+      background-color: #EBF2EC; /* Màu đệm nhẹ khi đang tải ảnh */
     }
 
-    /* Hiệu ứng Kính Mờ cao cấp cho Card */
+    /* Kính mờ siêu thực cho Card - Phản chiếu màu nền phía sau */
     .glass-warm {
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.78);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow: 0 16px 40px rgba(95, 122, 100, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 45px rgba(28, 46, 34, 0.07);
     }
 
-    /* Hiệu ứng Scroll: Chữ và ảnh từ từ xuất hiện mượt mà */
+    /* Hiệu ứng Scroll mờ -> rõ */
     .reveal-item {
       opacity: 0;
       filter: blur(8px);
@@ -76,7 +75,7 @@
       transform: translateY(0);
     }
 
-    /* Đĩa nhạc xoay */
+    /* Đĩa nhạc xoay tròn */
     @keyframes spin-slow {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -89,22 +88,23 @@
 <body class="relative selection:bg-theme-sage selection:text-white">
 
   <!-- ========================================================
-       1. ẢNH HERO LÀM NỀN MỜ CỐ ĐỊNH CHO TOÀN BỘ TRANG WEB
+       ẢNH HERO LÀM NỀN TOÀN BỘ WEB (BLUR CỰC MỊN & SẮC NÉT TỰ NHIÊN)
        ======================================================== -->
-  <div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
+  <div class="fixed inset-0 -z-30 overflow-hidden pointer-events-none select-none">
     <img 
       src="/assets/photo_hero.jpg" 
-      alt="Hero Background" 
-      class="w-full h-full object-cover scale-110 filter blur-[40px] opacity-35" 
+      alt="Hero Ambient Background" 
+      class="w-full h-full object-cover scale-125 filter blur-[36px] md:blur-[48px] brightness-[1.02] saturate-[1.35]" 
     />
-    <!-- Lớp phủ màu kem dịu nhẹ để ảnh không che mất chữ -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#F5F8F5]/85 via-[#FDF9EE]/80 to-[#F2F7F3]/90"></div>
+    <!-- Lớp phủ kính sáng mỏng giúp giữ trọn vẹn tone xanh mint & vàng gỗ của ảnh mà đọc chữ vẫn cực kỳ rõ -->
+    <div class="absolute inset-0 bg-white/45 backdrop-blur-[4px]"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/30"></div>
   </div>
 
-  <!-- Trình phát nhạc Audio ẩn -->
+  <!-- Audio phát nhạc ẩn -->
   <audio id="bgMusic" src="/music.mp3" loop preload="auto"></audio>
 
-  <!-- Nút Bật/Tắt Nhạc nổi góc dưới bên phải -->
+  <!-- Nút Bật/Tắt Nhạc nổi góc phải -->
   <div class="fixed bottom-6 right-6 z-50">
     <button id="musicToggleBtn" onclick="window.toggleMusic()" class="glass-warm px-3.5 py-3 rounded-full flex items-center gap-2.5 shadow-xl hover:scale-105 active:scale-95 transition-all border border-theme-gold-border group">
       <div id="musicIconWrapper" class="w-8 h-8 rounded-full bg-theme-sage text-white flex items-center justify-center">
@@ -114,10 +114,10 @@
     </button>
   </div>
 
-  <!-- Thanh điều hướng cố định (Được bọc khung nổi riêng biệt) -->
+  <!-- Header Điều hướng nổi bật -->
   <div id="navbar-root"></div>
 
-  <!-- Nội dung trang -->
+  <!-- Vùng nội dung chính -->
   <main id="app" class="max-w-4xl mx-auto px-4 sm:px-6 pt-28 pb-24 space-y-28"></main>
 
   <!-- Modal Lightbox -->

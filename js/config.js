@@ -1,4 +1,3 @@
-// Mapping 10 ảnh từ thư mục public/assets/
 export const IMAGE_ASSETS = {
   photo_hero: "/assets/photo_hero.jpg",
   photo_info_1: "/assets/photo_info_1.jpg",
@@ -15,31 +14,31 @@ export const IMAGE_ASSETS = {
 export const PARTY_DATE = new Date("2026-10-24T18:00:00").getTime();
 
 export const BABY_CONFIG = {
-  fullName: "Nguyễn Tuệ Nhi",
+  fullName: "Huỳnh Lê Khả Hân",
   nickName: "Bé Bắp",
-  partyDateString: "Chủ Nhật, ngày 18 tháng 10 năm 2026",
-  partyTimeString: "Từ 12:00",
+  partyDateString: "Thứ Bảy, ngày 24 tháng 10 năm 2026",
+  partyTimeString: "18:00 - 21:00",
   locationName: "Trung Tâm Sự Kiện White Palace",
   locationAddress: "194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh",
   googleMapsUrl: "https://maps.google.com/?q=White+Palace+Hoang+Van+Thu"
 };
 
-// Dữ liệu Hành trình 12 tháng đầu đời (Storytelling làm web sâu sắc và dài hơn)
+// Hành trình 12 tháng đầu đời của Khả Hân
 export const TIMELINE_STORY = [
   {
     month: "Tháng 01",
     title: "Tiếng khóc đầu tiên",
-    desc: "Ngày con cất tiếng khóc chào đời, cả thế giới của ba mẹ bỗng chốc thu bé lại vừa bằng một thiên thần nhỏ."
+    desc: "Ngày con cất tiếng khóc chào đời, cả thế giới của ba mẹ bỗng chốc thu bé lại vừa bằng một thiên thần nhỏ bé bỏng."
   },
   {
     month: "Tháng 03",
     title: "Nụ cười biết hóng chuyện",
-    desc: "Con bắt đầu biết đưa mắt nhìn theo bóng mẹ, nở nụ cười toe toét đầu tiên mỗi khi nghe ba bi bô trò chuyện."
+    desc: "Khả Hân bắt đầu biết nhìn theo bóng mẹ, nở nụ cười toe toét đầu tiên mỗi khi nghe ba bi bô trò chuyện."
   },
   {
     month: "Tháng 06",
     title: "Chiếc răng sữa đầu đời",
-    desc: "Mầm răng nhỏ xinh nhú lên khiến con ngứa nướu suốt ngày gặm nhấm đồ chơi, thích thú với từng thìa bột ăn dặm."
+    desc: "Mầm răng nhỏ xinh nhú lên khiến con thích thú gặm nhấm đồ chơi và hào hứng với từng thìa bột ăn dặm đầu đời."
   },
   {
     month: "Tháng 09",
@@ -49,6 +48,6 @@ export const TIMELINE_STORY = [
   {
     month: "Tháng 12",
     title: "Tròn một năm yêu thương",
-    desc: "Con đã có thể chập chững những bước đi đầu tiên, bi bô gọi Ba, Mẹ. Chúc con gái yêu một đời bình an và hạnh phúc!"
+    desc: "Con đã có thể chập chững những bước đi đầu tiên, bi bô gọi Ba, Mẹ. Chúc Khả Hân một đời bình an, rạng rỡ và hạnh phúc!"
   }
 ];

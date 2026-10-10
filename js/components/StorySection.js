@@ -4,25 +4,25 @@ export function renderStorySection() {
   return `
     <section id="story" class="space-y-16">
       
-      <!-- Bức thư tâm tình của Ba & Mẹ -->
+      <!-- Lời nhắn nhủ -->
       <div class="reveal-item text-center max-w-2xl mx-auto space-y-4">
         <span class="text-xs uppercase tracking-widest font-semibold text-theme-sage">Lời Nhắn Nhủ Yêu Thương</span>
         <h2 class="text-3xl sm:text-4xl font-serif font-bold text-theme-text">Gửi Thiên Thần Nhỏ Của Ba Mẹ</h2>
         <div class="w-16 h-[2px] bg-theme-gold mx-auto rounded-full"></div>
         <p class="text-sm sm:text-base text-theme-secondary leading-relaxed font-normal italic pt-2 px-2">
-          "365 ngày qua là một hành trình diệu kỳ. Cảm ơn con đã đến và mang theo cả bầu trời hạnh phúc, biến căn nhà nhỏ của ba mẹ luôn đầy ắp tiếng cười giòn tan. Chúc con gái yêu một đời bình an, hồn nhiên và luôn được yêu thương che chở."
+          "365 ngày qua là một hành trình diệu kỳ. Cảm ơn Khả Hân đã đến và mang theo cả bầu trời hạnh phúc, biến căn nhà nhỏ của ba mẹ luôn đầy ắp tiếng cười. Chúc con gái yêu một đời bình an, hồn nhiên và luôn được yêu thương che chở."
         </p>
       </div>
 
-      <!-- Ý nghĩa tên của bé & Khổ thơ kỷ niệm -->
+      <!-- Ý nghĩa tên Huỳnh Lê Khả Hân -->
       <div class="reveal-item grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="glass-warm p-7 rounded-apple-card border border-theme-sage/20 space-y-3">
           <span class="text-xs font-bold text-theme-gold uppercase tracking-wider">Ý Nghĩa Tên Con</span>
-          <h3 class="text-xl font-serif font-bold text-theme-text">Nguyễn Tuệ Nhi (Bé Bắp)</h3>
+          <h3 class="text-xl font-serif font-bold text-theme-text">Huỳnh Lê Khả Hân</h3>
           <p class="text-xs sm:text-sm text-theme-secondary leading-relaxed">
-            <strong>"Tuệ"</strong> là trí tuệ, thông minh, sáng dạ.<br>
-            <strong>"Nhi"</strong> là cô con gái nhỏ bé bỏng, đáng yêu.<br>
-            Ba mẹ mong con sau này lớn lên sẽ là một cô gái giàu lòng nhân ái, hiểu biết và có cuộc đời an yên như hạt bắp vàng ngọt ngào.
+            <strong>"Khả"</strong> là khả ái, nét đẹp đáng yêu, nụ cười làm say lòng người.<br>
+            <strong>"Hân"</strong> là hân hoan, rạng rỡ, niềm vui bất tận.<br>
+            Ba mẹ đặt tên con là <strong>Khả Hân</strong> với mong ước con gái sẽ luôn là cô bé vui vẻ, tươi sáng và mang đến nguồn năng lượng hạnh phúc cho mọi người xung quanh.
           </p>
         </div>
 
@@ -30,19 +30,19 @@ export function renderStorySection() {
           <span class="text-xs font-bold text-theme-sage uppercase tracking-wider">Thơ Mừng Thôi Nôi</span>
           <p class="text-xs sm:text-sm text-theme-text font-serif italic leading-relaxed">
             "Mười hai tháng trọn đầu đời,<br>
-            Nụ cười con hé rạng ngời nắng mai.<br>
-            Mai này khôn lớn đường dài,<br>
+            Khả Hân hé miệng nụ cười xinh tươi.<br>
+            Mai này vững bước đường dài,<br>
             Bình an, hạnh phúc nối hoài cùng con."
           </p>
-          <div class="text-right text-xs font-cursive text-theme-gold text-lg">- Yêu con thật nhiều -</div>
+          <div class="text-right text-xs font-cursive text-theme-gold text-xl">- Yêu Khả Hân thật nhiều -</div>
         </div>
       </div>
 
-      <!-- Timeline 12 tháng đầu đời -->
+      <!-- Timeline 12 tháng -->
       <div class="reveal-item glass-warm rounded-apple-banner p-6 sm:p-10 border border-theme-sage/20 space-y-8">
         <div class="text-center space-y-1">
           <span class="text-xs uppercase tracking-widest font-semibold text-theme-gold">First 365 Days</span>
-          <h3 class="text-xl sm:text-2xl font-serif font-bold text-theme-text">Hành Trình 365 Ngày Đầu Đời Của Bé</h3>
+          <h3 class="text-xl sm:text-2xl font-serif font-bold text-theme-text">Hành Trình 365 Ngày Đầu Đời Của Khả Hân</h3>
           <p class="text-xs text-theme-secondary">Từng bước ngoặt nhỏ ghi dấu sự lớn khôn của con gái</p>
         </div>
 
