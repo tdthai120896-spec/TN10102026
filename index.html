@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mừng Thôi Nôi Bé Yêu • 1st Birthday Celebration</title>
+
+  <!-- Google Fonts HỖ TRỢ 100% TIẾNG VIỆT CÓ DẤU (Khắc phục triệt để lỗi vỡ font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            theme: {
+              sage: '#5F7A64',
+              'sage-light': '#E6EFE7',
+              'sage-soft': '#F1F6F2',
+              gold: '#B8923F',
+              'gold-light': '#FCF8EE',
+              'gold-border': '#E4D5B2',
+              text: '#1F2E23',
+              secondary: '#5C6B60',
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', '-apple-system', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            cursive: ['"Great Vibes"', 'cursive']
+          },
+          borderRadius: {
+            'apple-card': '24px',
+            'apple-banner': '28px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1F2E23;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      background-color: #F6F8F5;
+    }
+
+    /* Hiệu ứng Kính Mờ cao cấp cho Card */
+    .glass-warm {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 16px 40px rgba(95, 122, 100, 0.08);
+    }
+
+    /* Hiệu ứng Scroll: Chữ và ảnh từ từ xuất hiện mượt mà */
+    .reveal-item {
+      opacity: 0;
+      filter: blur(8px);
+      transform: translateY(28px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  filter 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, filter, transform;
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+
+    /* Đĩa nhạc xoay */
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-music {
+      animation: spin-slow 7s linear infinite;
+    }
+  </style>
+</head>
+<body class="relative selection:bg-theme-sage selection:text-white">
+
+  <!-- ========================================================
+       1. ẢNH HERO LÀM NỀN MỜ CỐ ĐỊNH CHO TOÀN BỘ TRANG WEB
+       ======================================================== -->
+  <div class="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
+    <img 
+      src="/assets/photo_hero.jpg" 
+      alt="Hero Background" 
+      class="w-full h-full object-cover scale-110 filter blur-[40px] opacity-35" 
+    />
+    <!-- Lớp phủ màu kem dịu nhẹ để ảnh không che mất chữ -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#F5F8F5]/85 via-[#FDF9EE]/80 to-[#F2F7F3]/90"></div>
+  </div>
+
+  <!-- Trình phát nhạc Audio ẩn -->
+  <audio id="bgMusic" src="/music.mp3" loop preload="auto"></audio>
+
+  <!-- Nút Bật/Tắt Nhạc nổi góc dưới bên phải -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <button id="musicToggleBtn" onclick="window.toggleMusic()" class="glass-warm px-3.5 py-3 rounded-full flex items-center gap-2.5 shadow-xl hover:scale-105 active:scale-95 transition-all border border-theme-gold-border group">
+      <div id="musicIconWrapper" class="w-8 h-8 rounded-full bg-theme-sage text-white flex items-center justify-center">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+      </div>
+      <span id="musicStatusText" class="text-xs font-semibold text-theme-text pr-1 hidden sm:inline-block">Phát Nhạc</span>
+    </button>
+  </div>
+
+  <!-- Thanh điều hướng cố định (Được bọc khung nổi riêng biệt) -->
+  <div id="navbar-root"></div>
+
+  <!-- Nội dung trang -->
+  <main id="app" class="max-w-4xl mx-auto px-4 sm:px-6 pt-28 pb-24 space-y-28"></main>
+
+  <!-- Modal Lightbox -->
+  <div id="modals-root"></div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
