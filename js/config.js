@@ -15,9 +15,9 @@ export const PARTY_DATE = new Date("2026-10-24T18:00:00").getTime();
 
 export const BABY_CONFIG = {
   fullName: "Huỳnh Lê Khả Hân",
-  nickName: "Bé Bắp",
-  partyDateString: "Thứ Bảy, ngày 24 tháng 10 năm 2026",
-  partyTimeString: "18:00 - 21:00",
+  nickName: "Bé Tị",
+  partyDateString: "Chủ Nhật, ngày 18 tháng 10 năm 2026",
+  partyTimeString: "12:00 - 18:00",
   locationName: "Trung Tâm Sự Kiện White Palace",
   locationAddress: "194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh",
   googleMapsUrl: "https://maps.google.com/?q=White+Palace+Hoang+Van+Thu"
