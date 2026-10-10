@@ -28,7 +28,7 @@ export function renderBabyInfoSection() {
           <div class="p-5 rounded-apple-card bg-white apple-border shadow-apple-soft flex flex-col justify-between">
             <span class="text-xs text-apple-secondary">Cân nặng</span>
             <div class="my-2">
-              <span class="text-3xl font-bold text-apple-text tracking-tight">9.6</span>
+              <span class="text-3xl font-bold text-apple-text tracking-tight">9.1</span>
               <span class="text-xs text-apple-secondary">kg</span>
             </div>
             <span class="text-[11px] text-apple-sage font-medium">Bụ bẫm đáng yêu</span>
@@ -37,7 +37,7 @@ export function renderBabyInfoSection() {
           <div class="p-5 rounded-apple-card bg-white apple-border shadow-apple-soft flex flex-col justify-between">
             <span class="text-xs text-apple-secondary">Chiều cao</span>
             <div class="my-2">
-              <span class="text-3xl font-bold text-apple-text tracking-tight">76</span>
+              <span class="text-3xl font-bold text-apple-text tracking-tight">75</span>
               <span class="text-xs text-apple-secondary">cm</span>
             </div>
             <span class="text-[11px] text-apple-gold font-medium">Chân dài giống ba</span>

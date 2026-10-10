@@ -9,15 +9,15 @@ export function renderGallerySection() {
         <p class="text-xs text-theme-secondary font-light">Chạm vào từng bức ảnh để ngắm nhìn bé sắc nét hơn</p>
       </div>
 
-      <!-- Lưới Full Ảnh Không Bị Cắt (Natural Aspect-Ratio) -->
+      <!-- Lưới Full Ảnh Tự Nhiên Không Bị Cắt -->
       <div class="space-y-6">
         
-        <!-- Hàng 1: 1 Ảnh ngang Banner lớn trọn vẹn -->
+        <!-- Ảnh Ngang 1 -->
         <div class="reveal-item rounded-apple-banner overflow-hidden glass-warm p-2 border border-theme-sage/20 cursor-pointer group shadow-lg" onclick="window.openLightbox('${IMAGE_ASSETS.photo_gallery_1}')">
           <img src="${IMAGE_ASSETS.photo_gallery_1}" class="w-full h-auto rounded-2xl object-contain group-hover:scale-[1.01] transition-transform duration-500" alt="Khoảnh khắc 1" />
         </div>
 
-        <!-- Hàng 2: 2 Ảnh đứng Song Song Hiển Thị Trọn Vẹn -->
+        <!-- 2 Ảnh Đứng Song Song -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="reveal-item rounded-apple-banner overflow-hidden glass-warm p-2 border border-theme-sage/20 cursor-pointer group shadow-lg" onclick="window.openLightbox('${IMAGE_ASSETS.photo_gallery_4}')">
             <img src="${IMAGE_ASSETS.photo_gallery_4}" class="w-full h-auto rounded-2xl object-contain group-hover:scale-[1.02] transition-transform duration-500" alt="Khoảnh khắc 4" />
@@ -27,7 +27,7 @@ export function renderGallerySection() {
           </div>
         </div>
 
-        <!-- Hàng 3: 2 Ảnh Ngang Đặt Liền Nhau Trọn Vẹn -->
+        <!-- 2 Ảnh Ngang Kế Tiếp -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div class="reveal-item rounded-apple-banner overflow-hidden glass-warm p-2 border border-theme-sage/20 cursor-pointer group shadow-lg" onclick="window.openLightbox('${IMAGE_ASSETS.photo_gallery_2}')">
             <img src="${IMAGE_ASSETS.photo_gallery_2}" class="w-full h-auto rounded-2xl object-contain group-hover:scale-[1.02] transition-transform duration-500" alt="Khoảnh khắc 2" />
@@ -35,6 +35,11 @@ export function renderGallerySection() {
           <div class="reveal-item rounded-apple-banner overflow-hidden glass-warm p-2 border border-theme-sage/20 cursor-pointer group shadow-lg" onclick="window.openLightbox('${IMAGE_ASSETS.photo_gallery_3}')">
             <img src="${IMAGE_ASSETS.photo_gallery_3}" class="w-full h-auto rounded-2xl object-contain group-hover:scale-[1.02] transition-transform duration-500" alt="Khoảnh khắc 3" />
           </div>
+        </div>
+
+        <!-- Ảnh Ngang Mới Thêm (photo_gallery_6) tạo điểm nhấn kết màn trọn vẹn -->
+        <div class="reveal-item rounded-apple-banner overflow-hidden glass-warm p-2 border border-theme-sage/20 cursor-pointer group shadow-lg" onclick="window.openLightbox('${IMAGE_ASSETS.photo_gallery_6}')">
+          <img src="${IMAGE_ASSETS.photo_gallery_6}" class="w-full h-auto rounded-2xl object-contain group-hover:scale-[1.01] transition-transform duration-500" alt="Khoảnh khắc 6" />
         </div>
 
       </div>

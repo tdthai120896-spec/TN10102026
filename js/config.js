@@ -1,3 +1,4 @@
+// Mapping 11 ảnh trong thư mục public/assets/
 export const IMAGE_ASSETS = {
   photo_hero: "/assets/photo_hero.jpg",
   photo_info_1: "/assets/photo_info_1.jpg",
@@ -7,20 +8,22 @@ export const IMAGE_ASSETS = {
   photo_gallery_3: "/assets/photo_gallery_3.jpg",
   photo_gallery_4: "/assets/photo_gallery_4.jpg",
   photo_gallery_5: "/assets/photo_gallery_5.jpg",
+  photo_gallery_6: "/assets/photo_gallery_6.jpg", // Tấm ảnh ngang mới thêm
   photo_location: "/assets/photo_location.jpg",
   photo_rsvp: "/assets/photo_rsvp.jpg"
 };
 
-export const PARTY_DATE = new Date("2026-10-24T18:00:00").getTime();
+// Cập nhật mốc đếm ngược: 17:30 ngày 31/10/2026
+export const PARTY_DATE = new Date("2026-10-31T17:30:00").getTime();
 
 export const BABY_CONFIG = {
   fullName: "Huỳnh Lê Khả Hân",
-  nickName: "Bé Tị",
-  partyDateString: "Chủ Nhật, ngày 18 tháng 10 năm 2026",
-  partyTimeString: "12:00 - 18:00",
-  locationName: "Trung Tâm Sự Kiện White Palace",
-  locationAddress: "194 Hoàng Văn Thụ, Phường 9, Quận Phú Nhuận, TP. Hồ Chí Minh",
-  googleMapsUrl: "https://maps.google.com/?q=White+Palace+Hoang+Van+Thu"
+  nickName: "Bé Bắp",
+  partyDateString: "Thứ Bảy, ngày 31 tháng 10 năm 2026",
+  partyTimeString: "17:30 - 21:00",
+  locationName: "Sunny Farm Coffee and BBQ",
+  locationAddress: "173/1b Bình Lợi, Bình Lợi Trung, TP. Hồ Chí Minh",
+  googleMapsUrl: "https://maps.app.goo.gl/bY7vDqPkhYL93D9d6"
 };
 
 // Hành trình 12 tháng đầu đời của Khả Hân

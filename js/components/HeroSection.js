@@ -31,8 +31,8 @@ export function renderHeroSection() {
         </div>
       </div>
 
-      <!-- Apple Widget Countdown Tone Vàng & Xanh -->
-      <div class="pt-2">
+      <!-- Apple Widget Countdown -->
+      <div class="pt-2 space-y-4">
         <div class="inline-grid grid-cols-4 gap-2.5 sm:gap-4 p-3.5 rounded-apple-card glass-warm border border-theme-gold-border shadow-lg">
           <div class="w-16 sm:w-20 py-2.5 rounded-2xl bg-white/80 border border-theme-sage/10 text-center">
             <span id="days" class="block text-xl sm:text-2xl font-bold text-theme-text tracking-tight">00</span>
@@ -49,6 +49,22 @@ export function renderHeroSection() {
           <div class="w-16 sm:w-20 py-2.5 rounded-2xl bg-white/80 border border-theme-sage/10 text-center">
             <span id="seconds" class="block text-xl sm:text-2xl font-bold text-theme-text tracking-tight">00</span>
             <span class="text-[10px] text-theme-secondary uppercase font-semibold">Giây</span>
+          </div>
+        </div>
+
+        <!-- Khung tóm tắt thời gian & Nút bấm xem chi tiết tiệc mừng -->
+        <div class="max-w-lg mx-auto p-4 rounded-2xl glass-warm border border-theme-sage/20 space-y-3">
+          <p class="text-xs sm:text-sm text-theme-secondary leading-relaxed">
+            🌸 Tiệc thôi nôi diễn ra lúc <span class="font-bold text-theme-text">17:30 • 31/10/2026</span><br class="hidden sm:inline" />
+            tại <span class="font-bold text-theme-sage">${BABY_CONFIG.locationName}</span>
+          </p>
+          <div>
+            <a href="#party" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-theme-sage text-white text-xs font-semibold hover:bg-opacity-90 active:scale-95 transition-all shadow-md group">
+              <span>Xem Chi Tiết Buổi Tiệc & Bản Đồ</span>
+              <svg class="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
